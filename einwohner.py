@@ -6,7 +6,7 @@ import streamlit as st
 
 
 @st.cache_data
-def get_data():
+def get_data():# def = daten zwischen speichern
     df = pd.read_csv(
         "https://opendata.luebeck.de/bereich/1.102/statistik/bevoelkerung/"
         "einwohner-stadtteile/einwohner-stadtteile.csv",
@@ -36,7 +36,7 @@ try:
 
         chart = (
             alt.Chart(df)
-            .mark_line()
+            .mark_point()
             .encode(
                 x=alt.X("stichtag", title="Stichtag"),
                 y=alt.Y("einwohner", title="Einwohner"),
